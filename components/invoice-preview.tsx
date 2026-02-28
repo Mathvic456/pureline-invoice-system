@@ -16,6 +16,7 @@ export function InvoicePreview({ invoice }: InvoicePreviewProps) {
 
   const subtotal = invoice.items.reduce((sum, item) => sum + item.quantity * item.unitPrice, 0);
   const subtotalWithCosts = subtotal + invoice.transportCost + invoice.labourCost;
+  const taxe = subtotalWithCosts // 7.5% tax
   const tax = subtotalWithCosts * 0.075; // 7.5% tax
   const total = subtotalWithCosts;
 
